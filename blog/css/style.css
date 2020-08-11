@@ -1,0 +1,53 @@
+*{
+    margin: auto;
+    padding: auto;
+    font-family: 'Ubuntu';
+    box-sizing: border-box;
+}
+.title_field, .desc_field{
+    background: rgb(246, 246, 246);
+    font-weight: 900;
+    border: none;
+}
+.overlay{
+    position: absolute;
+    top: 75%;
+}
+.create_new{
+    color: white;   
+    height: 50px;
+    width: 200px;
+    border-radius: 50px;
+    margin-top: 20px;
+    font-weight: 900;
+    background-color: rgb(0, 42, 82);
+    border: 2px solid white;
+    outline: 0;
+}
+.blog_img{
+    max-width: 100%; 
+    width: 100%; 
+    height: 500px; 
+    display: block;
+}
+.create_new:hover{
+    background-color: rgb(59, 59, 255);
+}
+
+.my_blogs{
+    text-align: center;
+    text-decoration: none;
+    font-weight: 900;
+    cursor: pointer;
+    color: rgb(0, 42, 82);
+}
+.my_blogs:hover{
+    text-decoration: none;
+    font-weight: 900;
+    cursor: pointer;
+    color: rgb(59, 59, 255);
+}
+.blog_title{
+    font-weight: 900;
+    font-size: 1.5rem;
+}

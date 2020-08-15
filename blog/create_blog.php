@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Powered By ItzKartik</title>
+        <title>Create New Blog</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
         <style>
@@ -44,52 +44,11 @@
         </style>
     </head>
     <body>
-        
-        <div class="col-md-12 mx-auto text-center main_page">
-            <div class="row">
-                <div class="col-md-9 mr-auto text-left" style="padding: 40px;">
-                    <div class="blog row">
-                        <?php
-                            require_once 'db.php';
-                            $retrieve = mysqli_query($con, "SELECT * FROM blogs");
-                            if (mysqli_num_rows($retrieve) > 0) {
-                                $i=0;
-                                while($row = mysqli_fetch_array($retrieve)) {
-                        ?>
-                        <div class="wrap_blog col-md-5" style="margin-top:20px; padding: 10px; border-radius: 10px; background: antiquewhite;">
-                            <div class="img_wrap">
-                                <?php
-                                    echo "<a href='full_view.php?id=".$row['sno']."'>";
-                                    echo "<img class='blog_img' src='uploads/".$row['image_name']."' alt=''>";
-                                ?>
-                            </div>
-                            <div style="background-color: antiquewhite; padding: 10px;">
-                                <?php
-                                    echo '<h2 style="margin:10px;" class="blog_title">'.$row["title"].'</h2><hr>';
-                                ?>
-                            </div>
-                            </a>
-                        </div>
-                        <?php
-                                    $i++;
-                                }
-                            }
-                        ?>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="buttons_con">
-                        <button class="create_new btn btn-primary">
-                            <a class="create_new_blog" href="create_blog.php">Create New Blog</a>
-                        </button><Br>
-                        <a class="my_blogs" href="myblogs.php">My Blogs</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-12 mx-auto text-center create_new_form" style="display: none; padding-top: 20px;">
+        <div class="col-md-12 mx-auto text-center create_new_form" style="padding-top: 20px;">
             <?php
+
+                require_once 'db.php';
+
                 if($blog_created){
                     if($blog_created == 'error'){
                         echo "<h1 style='color: red;'>Failed To Create...</h1>";
@@ -100,22 +59,24 @@
                     }
                 }
             ?>
-            <form enctype="multipart/form-data" method="POST" class="mx-auto text-center formc" style="margin: 40px;">
+            <h1 style="margin:40px;">Create New Blog</h1>
+            <form enctype="multipart/form-data" method="POST" class="col-md-8 mx-auto text-left formc" style="margin: 40px;">
+                <div class="form-group">
+                    <label class="custom-file-upload"><input class="form-control title_field" type="file" name="fileToUpload">
+                    Upload Image</label>
+                </div>
                 <div class="form-group">
                     <input class="form-control title_field" type="text" name="title" placeholder="Enter Title...">
                 </div>
                 <div class="form-group">
-                    <input class="form-control title_field" type="file" name="fileToUpload" placeholder="Enter Title...">
+                    <textarea name="desc" id="" cols="30" rows="10" placeholder="Enter Description..." class="desc_field form-control"></textarea>
                 </div>
-                <div class="form-group">
-                    <textarea name="desc" id="" cols="30" rows="19" placeholder="Enter Description..." class="desc_field form-control"></textarea>
-                </div>
-                <button class="btn btn-primary form-control">Create</button>
+                <button class="col-md-3 btn btn-primary form-control">Create</button>
             </form>
         </div>
 
     </body>
-    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
     <script>
     $('.formc').on('submit', function(e){
         e.preventDefault();

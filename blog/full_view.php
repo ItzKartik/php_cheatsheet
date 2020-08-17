@@ -30,16 +30,12 @@ require 'html/header.html';
                                         <label class="custom-file-upload"><input class="file_upload form-control title_field" type="file" name="fileToUpload">
                                         Upload Image</label>
                                     </div>
-                                    <script>
-                                        $(document).ready(function(){
-                                            $('.file_upload').val("<?php echo $row['image_name'] ?>");
-                                        });
-                                    </script>
                                     <?php
                                         echo "<img class='blog_img3' src='uploads/".$row['image_name']."' alt='Deleted your server'>";
                                     ?>
                                 </div>
                                 <div class="txtwrap">
+                                    <Br>
                                     <div class="form-group fc">
                                         <input class="form-control title_field" type="text" value="<?php echo $row["title"]; ?>" name="title" placeholder="Enter Title...">
                                     </div>
@@ -54,7 +50,7 @@ require 'html/header.html';
                                         echo '<p class="fc_hide" style="margin: 20px; font-size: 1.2rem;">'.$row['description'].'</p>';
                                     ?>
                                 </div>
-                                <button class="fc col-md-2 btn btn-primary form-control">Submit</button>
+                                <button type="submit" class="fc col-md-2 btn btn-primary form-control">Submit</button>
                             </div>
                         </form>
                         <?php

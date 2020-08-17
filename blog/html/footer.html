@@ -51,28 +51,34 @@
         });
 
         $('.formc_update').on('submit', function(e){
-            e.preventDefault();
-            $.ajax({
-                url: "update_ajax.php",
-                type: 'POST',
-                data: new FormData(this),
-                contentType: false,
-                cache: false,
-                processData:false,
-                success: function (data) {
-                    if (data != "Updated"){
-                        alert('Error In updation...');
+            var file_upload = $('.file_upload').val();
+            if(file_upload === ""){
+                alert("Please Select An Image");
+            }
+            else{
+                e.preventDefault();
+                $.ajax({
+                    url: "update_ajax.php",
+                    type: 'POST',
+                    data: new FormData(this),
+                    contentType: false,
+                    cache: false,
+                    processData:false,
+                    success: function (data) {
+                        if (data != "Updated"){
+                            alert('Error In updation...');
+                        }
+                        else{
+                            alert("Blog Updated Successfully");
+                            window.location.replace('myblogs.php');
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error);
+                        alert(error);
                     }
-                    else{
-                        alert("Blog Updated Successfully");
-                        window.location.replace('myblogs.php');
-                    }
-                },
-                error: function (error) {
-                    console.log(error);
-                    alert(error);
-                }
-            });
+                });
+            }
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

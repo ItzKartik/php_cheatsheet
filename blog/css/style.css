@@ -4,6 +4,40 @@
     font-family: 'Ubuntu';
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+    color: black !important;
+}
+.buttons_con{
+    position: fixed; 
+    top: 80px; 
+    right: 80px;
+}
+.blog{
+    cursor: pointer;
+}
+@media(max-width: 769px){
+    .blog_img{
+        height: 200px !important;
+    }
+    .blog_title{
+        font-size: 1rem !important;
+    }
+    .overlay{
+        position: absolute;
+        top: 65% !important;
+    }
+    .buttons_con{
+        border-radius: 20px;
+        background: white !important;
+        position: fixed !important; 
+        top: 20px !important;  
+        right: 80px;
+    }
+    .main_page{
+        margin-top: 100px !important;
+    }
+}
 .title_field, .desc_field{
     background: rgb(246, 246, 246);
     font-weight: 900;
@@ -77,4 +111,10 @@ input[type="file"] {
 .blog_title{
     font-weight: 900;
     font-size: 1.5rem;
+}
+.blog_img3{
+    border-radius: 5px;
+    max-width: 100%; 
+    height: auto; 
+    display: block;
 }

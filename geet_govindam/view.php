@@ -18,6 +18,10 @@ require 'html/header.html';
             <audio controls="" preload="auto"> 
                 <source src="<?php echo "uploads/".$row['music']."" ?>"> 
             </audio>
+            <audio controls="" preload="auto"> 
+                <source src="uploads/1.mp3" type="audio/mpeg"> 
+                Your browser does not support the audio element.
+            </audio>
             <?php
                         echo '<br><Br><br><div class="mx-auto text-left"><p style="font-family: "Baloo 2 !important;"">'.nl2br(stripslashes($row['bhajan'])).'</p></div>';
                         $i++;

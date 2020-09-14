@@ -8,7 +8,13 @@ require 'html/header.html';
             <br>
             <span class="foot" style="font-family: 'Lobster'; font-size: 10vw; color: #1d37ff;">G<span style="font-size: 5vw;">eet</span></span>
             &nbsp;&nbsp;<span class="foot" style="font-family: 'Lobster'; font-size: 10vw; color: #1d37ff;">G<span style="font-size: 5vw;">ovindam</span></span>
-            <Br><Br>
+            <br>
+            <span style="color: #1d37ff; font-weight: 700;">Written By 
+            <span style="text-decoration-line: underline;">Shri JayDev Goswami</span>
+            ( Devotee Of <span style="text-decoration-line: underline; font-size:1.3rem; color: rgb(255, 102, 47); cursor: pointer;">Lord Krishna</span> ) 
+            And Beautifully Presented By 
+            <span style="text-decoration-line: underline;">Shri Rajendradasji Maharaj</span> ( Youtube Playlist </span>
+            <a href="https://www.youtube.com/watch?v=C6JR7TfXPoQ&list=PLhKX4OoBv7kRfT_YEf40SzQRTPqk6wGTl">Click Here )</a><Br><Br>
             <?php
                 require_once 'db_scripts/connect_to_db.php';
                 $retrieve = mysqli_query($con, "SELECT * FROM sno");

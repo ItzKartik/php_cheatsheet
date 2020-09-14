@@ -16,10 +16,10 @@ require 'html/header.html';
                     $i=0;
                     while($row = mysqli_fetch_array($retrieve)) {
                         if($row['part'] < 24){
-                            echo '<div class="links"><a target="_blank" href="part.php?part='.$row['part'].'">Part '.$row['part'].'</a></div>';
+                            echo '<div class="links"><a target="_blank" href="view.php?part='.$row['part'].'">Part '.$row['part'].'</a></div>';
                         }
                         else{
-                            echo '<div class="links"><a target="_blank" href="part.php?part='.$row['part'].'">Part '.$row['part'].'</a></div>';
+                            echo '<div class="links"><a target="_blank" href="view.php?part='.$row['part'].'">Part '.$row['part'].'</a></div>';
                         }
                         $i++;
                     }

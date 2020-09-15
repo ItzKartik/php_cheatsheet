@@ -15,15 +15,13 @@ require 'html/header.html';
                     while($row = mysqli_fetch_array($retrieve)) {
                         echo '<h1>Part '.$row['part'].'</h1><hr><Br>';
             ?>
-            <audio controls="" preload="auto"> 
-                <source src="<?php echo "uploads/".$row['music']."" ?>"> 
-            </audio>
-            <audio controls="" preload="auto"> 
-                <source src="uploads/1.mp3" type="audio/mpeg"> 
-                Your browser does not support the audio element.
+            <audio controls="" preload="auto">
+                <source src="<?php echo $row['music']; ?>"> 
             </audio>
             <?php
-                        echo '<br><Br><br><div class="mx-auto text-left"><p style="font-family: "Baloo 2 !important;"">'.nl2br(stripslashes($row['bhajan'])).'</p></div>';
+                        // music ---> https://drive.google.com/uc?id=1dTNJvLDeR_HwJ4MLMJaNfLkOG-x_cnov
+                        // file ---> https://drive.google.com/uc?id=15LO75khFzIya5Og7eIms0vi6zirkEVp
+                        echo '<br><Br><br><div class="mx-auto text-left"><p style="font-weight: 700; font-size: 1.2rem; font-family: "Baloo 2 !important;"">'.nl2br(stripslashes($row['bhajan'])).'</p></div>';
                         $i++;
                     }
                 }

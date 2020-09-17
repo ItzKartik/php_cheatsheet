@@ -4,7 +4,7 @@ require 'html/header.html';
 
 ?>
    
-    <div class="container mx-auto text-center">
+    <div class="container cn mx-auto text-center">
             <br>
             <span class="foot" style="font-family: 'Lobster'; font-size: 10vw; color: #1d37ff;">G<span style="font-size: 5vw;">eet</span></span>
             &nbsp;&nbsp;<span class="foot" style="font-family: 'Lobster'; font-size: 10vw; color: #1d37ff;">G<span style="font-size: 5vw;">ovindam</span></span>
@@ -21,16 +21,12 @@ require 'html/header.html';
                 if (mysqli_num_rows($retrieve) > 0) {
                     $i=0;
                     while($row = mysqli_fetch_array($retrieve)) {
-                        if($row['part'] < 24){
-                            echo '<div class="links"><a target="_blank" href="view.php?part='.$row['part'].'">Part '.$row['part'].'</a></div>';
-                        }
-                        else{
-                            echo '<div class="links"><a target="_blank" href="view.php?part='.$row['part'].'">Part '.$row['part'].'</a></div>';
-                        }
+                        echo '<div class="links"><a target="_blank" href="view.php?part='.$row['part'].'">Part '.$row['part'].'</a></div>';
                         $i++;
                     }
                 }
             ?>
+            <div class="links"><a target="_blank" href="view.php?part=16">Govind Hare</a></div>
     </div>
     <br><Br>
 

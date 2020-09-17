@@ -16,7 +16,7 @@ require 'html/header.html';
             <span style="text-decoration-line: underline;">Shri Rajendradasji Maharaj</span> ( Youtube Playlist </span>
             <a href="https://www.youtube.com/watch?v=C6JR7TfXPoQ&list=PLhKX4OoBv7kRfT_YEf40SzQRTPqk6wGTl">Click Here )</a><Br><Br>
             <?php
-                require_once 'db_scripts/connect_to_db.php';
+                require_once 'connect_to_db.php';
                 $retrieve = mysqli_query($con, "SELECT * FROM sno");
                 if (mysqli_num_rows($retrieve) > 0) {
                     $i=0;
